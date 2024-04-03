@@ -1,0 +1,13 @@
+<% layout('./layout/boilerplate') %>
+<h1 class="text-center mt-3">Welcome to Project Manager</h1>
+<img width="300px" height="300px" class="ml-auto mr-auto" src="/home_logo.jpg" alt="Loading">
+<div class="inline ml-auto mr-auto mt-5 ">
+    <% if(!user) {%>
+    <a class="btn btn-success " href="/login">Login</a>
+    <a class="btn btn-success" href="/register">Register</a>
+    <% } %>
+    <% if(user) {%>
+        <a class="btn btn-success" href="/projects">My Projects</a>
+
+    <% } %>
+</div>

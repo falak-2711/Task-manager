@@ -1,0 +1,39 @@
+<% layout('./layout/boilerplate')%>
+
+<div class="row">
+<div class="col-6 offset-1">
+
+    <img class="d-block w-100 mt-3" height="600px" width="150px" src="<%=project.image.path%>" alt="First slide">
+ 
+  
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%=project.name %></h5>
+      <% if(project.iscompleted){ %>
+      <p class="card-text btn btn-success">Completed</p>
+      <% } %>
+      <% if(!project.iscompleted){ %>
+        <p class="card-text btn btn-warning">Pending</p>
+        <% } %>
+
+      <p class="card-text"><%=project.description %></p>
+
+    </div>
+    <div class="card-body">
+      <a class="btn btn-secondary red" href="<%=project.Github %>" class="card-link">Github</a>
+
+      
+    <a class="btn btn-warning col-1 ml-1 d-inline"href="/edit/<%=project._id%>">Edit</a>
+
+    <form class="d-inline"action="/<%=project._id%>?_method=DELETE" method="post">
+      <button class="btn btn-danger">Delete</button>
+    </form>  
+ 
+
+  </div>
+  </div>
+
+
+</div>
+
+</div>
